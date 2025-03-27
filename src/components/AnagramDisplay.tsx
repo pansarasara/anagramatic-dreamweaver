@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Copy, RotateCcw, ArrowUp } from 'lucide-react';
 import ActionButton from './ActionButton';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import { copyToClipboard, createRandomPosition } from '@/utils/anagramUtils';
 
 interface AnagramDisplayProps {

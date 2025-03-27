@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import ActionButton from './ActionButton';
-import { toast } from '@/components/ui/sonner';
+import { toast } from 'sonner';
 import { isValidName } from '@/utils/anagramUtils';
 import { motion } from 'framer-motion';
 
