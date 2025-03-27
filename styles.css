@@ -1,0 +1,341 @@
+
+:root {
+  --background: hsl(40, 33%, 98%);
+  --foreground: hsl(240, 10%, 3.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(240, 10%, 3.9%);
+  --primary: hsl(196, 100%, 47%);
+  --primary-foreground: hsl(0, 0%, 98%);
+  --secondary: hsl(240, 4.8%, 95.9%);
+  --secondary-foreground: hsl(240, 5.9%, 10%);
+  --muted: hsl(240, 4.8%, 95.9%);
+  --muted-foreground: hsl(240, 3.8%, 46.1%);
+  --accent: hsl(196, 100%, 47%);
+  --accent-foreground: hsl(240, 5.9%, 10%);
+  --border: hsl(240, 5.9%, 90%);
+  --input: hsl(240, 5.9%, 90%);
+  --ring: hsl(196, 100%, 47%);
+  --radius: 0.5rem;
+  
+  --rustic-bg: var(--background);
+  --rustic-text: var(--foreground);
+  --rustic-paper: #f5f3f0;
+  --rustic-muted: #a8a29e;
+  --rustic-accent: var(--primary);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--rustic-bg);
+  color: var(--rustic-text);
+  line-height: 1.5;
+  min-height: 100vh;
+  background-image: linear-gradient(to right, rgba(236, 232, 225, 0.5) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(236, 232, 225, 0.5) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+#app {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  overflow-x: hidden;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+
+.subtitle {
+  color: var(--rustic-muted);
+  max-width: 28rem;
+  margin: 0 auto;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+main {
+  width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 0.5rem;
+  border: 1px solid rgba(var(--rustic-muted), 0.2);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 28rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.75rem;
+}
+
+.hint {
+  color: var(--rustic-muted);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  margin-bottom: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 1rem;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--rustic-accent);
+  box-shadow: 0 0 0 2px rgba(0, 149, 255, 0.1);
+}
+
+.btn-primary {
+  position: relative;
+  background-color: var(--rustic-accent);
+  color: white;
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-primary:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover:before {
+  opacity: 0.1;
+}
+
+.btn-secondary {
+  background-color: var(--rustic-paper);
+  color: var(--rustic-text);
+  border: 1px solid rgba(var(--rustic-muted), 0.3);
+  font-weight: 500;
+  padding: 0.625rem 1.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: rgba(var(--rustic-paper), 0.8);
+}
+
+.info-box {
+  margin-top: 1.5rem;
+}
+
+.base-name {
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1.5rem;
+}
+
+.anagram-display h3 {
+  font-size: 0.875rem;
+  color: var(--rustic-muted);
+  margin-bottom: 0.25rem;
+}
+
+.anagram-box {
+  min-height: 3rem;
+  background-color: rgba(var(--rustic-paper), 0.5);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  border: 1px solid rgba(var(--rustic-muted), 0.1);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+.anagram-box .placeholder {
+  color: rgba(var(--rustic-muted), 0.5);
+  font-size: 0.875rem;
+}
+
+.letters-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 2rem;
+  max-width: 32rem;
+}
+
+.letter-btn {
+  position: relative;
+  border-radius: var(--radius);
+  padding: 0.875rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(4px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(var(--rustic-muted), 0.2);
+  background-color: rgba(255, 255, 255, 0.8);
+  transform-origin: center;
+}
+
+.letter-btn:hover {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  background-color: rgba(var(--rustic-accent), 0.1);
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.result-card {
+  text-align: center;
+}
+
+.final-anagram {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  margin: 2rem 0;
+  word-break: break-word;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.create-btn-container {
+  margin-top: 1rem;
+}
+
+@media (min-width: 640px) {
+  .letter-btn {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+}

@@ -1,26 +1,86 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>anagramatic-dreamweaver</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <title>Anagramatic Dreamweaver</title>
+    <meta name="description" content="Transform your name into anagrams" />
+    <meta name="author" content="Anagramatic" />
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
+    <div id="app">
+      <header>
+        <h1 class="title">Anagramatic</h1>
+        <p class="subtitle">Transform your name into something extraordinary</p>
+      </header>
+      
+      <main>
+        <!-- Name Input Section -->
+        <div id="input-section" class="section">
+          <div class="card">
+            <h2>Enter your name</h2>
+            <p class="hint">We'll use the letters to create an anagram</p>
+            
+            <form id="name-form">
+              <div class="input-group">
+                <input type="text" id="name-input" placeholder="Your name..." required>
+              </div>
+              <button type="submit" class="btn-primary">Create Anagram</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Letter Selection Section -->
+        <div id="selection-section" class="section hidden">
+          <div class="card">
+            <h2>Select Letters</h2>
+            <div class="info-box">
+              <h3>Base name:</h3>
+              <p id="base-name" class="base-name"></p>
+              
+              <div class="anagram-display">
+                <h3>Your anagram:</h3>
+                <div id="current-anagram" class="anagram-box">
+                  <span class="placeholder">Select letters below</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div id="letters-container" class="letters-container"></div>
+          
+          <div id="create-anagram-container" class="create-btn-container hidden">
+            <button id="create-anagram-btn" class="btn-primary">Create Anagram</button>
+          </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-section" class="section hidden">
+          <div class="card result-card">
+            <h2>Your Anagram</h2>
+            <div id="final-anagram" class="final-anagram"></div>
+            
+            <div class="actions">
+              <button id="copy-btn" class="btn-secondary">
+                <span>Copy</span>
+              </button>
+              <button id="back-btn" class="btn-secondary">
+                <span>Try Different Letters</span>
+              </button>
+              <button id="reset-btn" class="btn-secondary">
+                <span>Start Over</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
