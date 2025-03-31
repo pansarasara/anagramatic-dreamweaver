@@ -267,6 +267,23 @@ input:focus {
   background-color: rgba(var(--rustic-accent), 0.1);
 }
 
+/* Special styling for the space button */
+.space-btn {
+  background-color: rgba(236, 232, 225, 0.8);
+  font-size: 1rem;
+  width: 3.5rem;
+}
+
+.space-btn:hover {
+  background-color: rgba(var(--rustic-accent), 0.15);
+}
+
+/* Feedback for space button click */
+.letter-active {
+  background-color: rgba(var(--rustic-accent), 0.2);
+  transform: scale(0.95);
+}
+
 .shimmer-effect {
   position: relative;
   overflow: hidden;
@@ -337,5 +354,9 @@ input:focus {
   .letter-btn {
     width: 3.5rem;
     height: 3.5rem;
+  }
+  
+  .space-btn {
+    width: 4.5rem;
   }
 }

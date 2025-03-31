@@ -104,6 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderLetterButtons() {
     elements.lettersContainer.innerHTML = '';
     
+    // Add a space button first
+    const spaceButton = document.createElement('button');
+    spaceButton.className = 'letter-btn space-btn';
+    spaceButton.textContent = '␣';
+    spaceButton.dataset.letter = ' ';
+    spaceButton.title = 'Add a space';
+    spaceButton.addEventListener('click', () => handleSpaceSelect(spaceButton));
+    elements.lettersContainer.appendChild(spaceButton);
+    
+    // Then add letter buttons
     availableLetters.forEach((letter, index) => {
       const button = document.createElement('button');
       button.className = 'letter-btn';
@@ -141,6 +151,21 @@ document.addEventListener('DOMContentLoaded', () => {
     if (availableLetters.length === 0) {
       elements.createAnagramContainer.classList.remove('hidden');
     }
+  }
+  
+  // Handle space selection (without removing the button)
+  function handleSpaceSelect(buttonElement) {
+    // Add space to selected letters
+    selectedLetters.push(' ');
+    
+    // Update anagram display
+    updateCurrentAnagram();
+    
+    // Highlight button briefly to give feedback
+    buttonElement.classList.add('letter-active');
+    setTimeout(() => {
+      buttonElement.classList.remove('letter-active');
+    }, 200);
   }
   
   // Update the current anagram display
